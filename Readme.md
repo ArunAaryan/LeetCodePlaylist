@@ -1,4 +1,4 @@
-(12 days for solving easy questions)
-Hundred Days of Code : Day 13
+Days 1 - 12 (Easy)
+Hundred Days of Code : Day 14(Medium)
 # LeetCodePlaylist
 Inspired by Sean Prashad's leetcode question playlist.
