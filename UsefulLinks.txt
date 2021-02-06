@@ -1,0 +1,3 @@
+# Tech Dose with leetcode Solutions: https://www.youtube.com/channel/UCnxhETjJtTPs37hOZ7vQ88g
+
+# Dynamic Programming Patters : https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns
