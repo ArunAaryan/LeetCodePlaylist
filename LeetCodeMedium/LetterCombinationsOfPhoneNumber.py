@@ -18,7 +18,7 @@ class Solution:
         return res
 
 s = Solution()
-res =  s.letterCombinations('23')
+res =  s.letterCombinations('234')
 print(res)
 
 
