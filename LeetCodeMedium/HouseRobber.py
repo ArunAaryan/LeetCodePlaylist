@@ -32,6 +32,7 @@ class Solution:
         # self.memo[1] = nums[1]
         # for idx, val in enumerate(nums):
         #     self.memo[idx + 1] = max(self.memo[idx], self.memo[idx - 1] + val)
+        # return self.memo[len(nums)]
 
         self.memo = [0] * len(nums)
         self.memo[0] = nums[0]
@@ -41,7 +42,6 @@ class Solution:
         return self.memo[len(nums) - 1]
 
         
-        return self.memo[len(nums)]
 
     def robStateVariables(self, nums: List[int]) -> int:
         prev = 0
