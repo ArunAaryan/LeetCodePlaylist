@@ -41,7 +41,6 @@ class Solution:
                 left += 1
                 right += 1
         return count
-
     def countSubStringsExpand(self, s):
         count = 0
         n = len(s)

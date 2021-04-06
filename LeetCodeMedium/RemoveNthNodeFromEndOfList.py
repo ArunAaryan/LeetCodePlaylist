@@ -30,7 +30,7 @@ class Solution:
         while fast.next:
             slow = slow.next
             fast = fast.next
-        print(slow.val,'slow.val')
+        # print(slow.val,'slow.val')
         slow.next = slow.next.next
         return dummy.next
 l = LinkedList()

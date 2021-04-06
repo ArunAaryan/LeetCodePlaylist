@@ -27,5 +27,10 @@ class LinkedList:
         while cur:
             print(cur.val, end=' ')
             cur = cur.next
-
+    @classmethod
+    def printElements(cls, head):
+        while head:
+            print(head.val, end=" ")
+            head = head.next
+        print("")
         
