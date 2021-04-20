@@ -6,9 +6,13 @@
   ],
   "settings": {
     "workbench.colorCustomizations": {
-      "[Ra Spring]": {
-        "editor.background": "#ddd9d9"
+      "[Ocean]": {
+        // "editor.background": "#ddd9d9"
+        // "editor.foreground": "#cfc2c2"
+        // "editor.foldBackground": ""
+        // "editorInfo.border": "#ff0000"
       }
     }
-  }
+  },
+  "terminal.integrated.rendererType": "dom"
 }
