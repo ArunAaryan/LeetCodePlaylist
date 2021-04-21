@@ -12,6 +12,11 @@
         // "editor.foldBackground": ""
         // "editorInfo.border": "#ff0000"
       }
+    },
+    "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
     }
   },
   "terminal.integrated.rendererType": "dom"
