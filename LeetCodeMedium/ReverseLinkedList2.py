@@ -84,5 +84,5 @@ class Solution:
 l = LinkedList()
 head = l.arrayToList([1,2,3,4,5])
 s = Solution()
-res = s.reverseBetween3(head, 1,4)
+res = s.reverseBetween2(head, 2,4)
 LinkedList.printElements(res)
