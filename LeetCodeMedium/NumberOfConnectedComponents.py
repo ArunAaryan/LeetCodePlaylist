@@ -11,7 +11,7 @@ class Solution:
             for node in graph[root]:
                 if node in visited:
                     continue
-                dfs(node)
+                dfs(node) 
 
         count = 0
         for vertex in graph:
