@@ -14,7 +14,7 @@ class Solution:
                 if heap:
                     ntasks = heappop(heap) 
                     if ntasks != -1:
-                        remainingTasks.append(ntasks + 1)
+                        remainingTasks.append(ntasks + 1) # decrease tasks by 1 , + 1 because items are negated for the use of min heapj
                 if not heap and not remainingTasks:
                     break
             for remaining in remainingTasks:
