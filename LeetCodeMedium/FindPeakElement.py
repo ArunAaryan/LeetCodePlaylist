@@ -4,8 +4,13 @@ class Solution:
         right = len(nums) - 1
         while left < right:
             mid = (left + right) // 2
+            #check if mid is greater than mid + 1, if it greater then peak element must be in left, 
+            # in the worst case mid coudl be peak, or left element must definitely be lesser or 
+            # equal to peak as this is sorted aray.
             if nums[mid]  > nums[mid + 1]:
                 right = mid 
+            #same applies here, mid+1 could be the peak element or the last element towards right could be peak
+            #right element could be equal or greater than middle.
             else:
                 left = mid + 1
         return mid

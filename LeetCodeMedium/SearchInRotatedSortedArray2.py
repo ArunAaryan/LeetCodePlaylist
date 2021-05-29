@@ -5,7 +5,7 @@ class Solution:
         while left <= right:
             mid = (left + right) // 2
             if nums[mid] == target:
-                return mid
+                return True
 
             if nums[left] < nums[mid]:
                 if nums[left] <= target < nums[mid]:
@@ -23,7 +23,8 @@ class Solution:
         return False
 s = Solution()
 # res = s.search([2,5,6,0,0,1,2],0)
-res = s.search([1,1,1,0,1], 0)
+# res = s.search([1,1,1,0,1], 0)
+res = s.search([1], 1)
 print(res)
 
 

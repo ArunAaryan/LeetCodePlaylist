@@ -3,3 +3,4 @@
 # Dynamic Programming Patters : https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns
 
 #https://leetcode.com/problems/add-two-numbers/discuss/1340/A-summary-about-how-to-solve-Linked-List-problem-C%2B%2B
+https://leetcode.com/problems/binary-search/discuss/423162/Binary-Search-101-The-Ultimate-Binary-Search-Handbook
