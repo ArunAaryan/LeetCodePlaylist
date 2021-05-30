@@ -68,6 +68,9 @@ class Solution:
         while cur.next:
             cur = cur.next
             l += 1
+        k = k % l
+        print('l =', l)
+        print('k= ',k)
         cur.next = head
         temp = head
         for _ in range(l - k -1):
@@ -78,12 +81,13 @@ class Solution:
         return head
 
 l = LinkedList()
-head =  l.arrayToList([1,2,3,4,5])
+# head =  l.arrayToList([1,2,3,4,5])
+head =  l.arrayToList([0,1,2])
 
 s = Solution()
 # res = s.rotateRight(head, 5)
 # res = s.rotateRightSF(head,2)
-res = s.rotateUsingCircular(head, 2)
+res = s.rotateUsingCircular(head, 1)
 LinkedList().printElements(res)
 
 # print(4 %3)

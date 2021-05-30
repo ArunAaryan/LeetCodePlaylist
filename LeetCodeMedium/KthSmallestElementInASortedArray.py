@@ -49,7 +49,9 @@ class Solution:
                         row -= 1
                     else:
                         smaller = max(smaller, matrix[row][col])
-                        count += row + 1
+                        count += row + 1 # even the rows are in sorted order,
+                        #  if the element at current row is smaller than mid then all the above elements in the above rows and same col are also smaller
+                        # but row starts from 0 so we add row + 1 which means row + 1 elements above are smaller than mid.
                         col += 1
                 return count, smaller, larger
 

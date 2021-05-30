@@ -6,7 +6,7 @@ class Solution:
         while i < len(firstList) and j < len(secondList):
             lo = max(firstList[i][0], secondList[j][0])
             high = min(firstList[i][1], secondList[j][1])
-            if lo <= high:
+            if lo <= high: # means when there is intersection only then append
                 res.append([lo, high])
             
             if firstList[i][1] < secondList[j][1]:
