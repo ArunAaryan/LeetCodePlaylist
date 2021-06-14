@@ -16,7 +16,7 @@ class Solution:
                 left += 1
             res = max(res, right - left + 1)
             right += 1
-        # print(tree[left : right + 1])
+        print(tree[left : right + 1])
         return res
 
 s = Solution()
