@@ -4,5 +4,5 @@
       "editor.background": "#ddd9d9"
     }
   },
-  "python.pythonPath": "/usr/local/bin/python3.8"
+  "python.pythonPath": "/Library/Developer/CommandLineTools/usr/bin/python3"
 }

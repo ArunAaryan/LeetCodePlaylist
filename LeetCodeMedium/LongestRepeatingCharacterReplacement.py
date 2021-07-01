@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/longest-repeating-character-replacement/discuss/91301/Awesome-python-solution
+import collections
 def charReplace(string, replaces):
     count = {}
     start = maxcount = res = 0

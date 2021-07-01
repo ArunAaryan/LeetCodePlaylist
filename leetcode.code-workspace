@@ -17,7 +17,9 @@
       "other": false,
       "comments": false,
       "strings": false
-    }
+    },
+    "workbench.settings.useSplitJSON": true,
+    "editor.fontSize": 14
   },
   "terminal.integrated.rendererType": "dom"
 }
