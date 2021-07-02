@@ -6,6 +6,9 @@ def charReplace(string, replaces):
     for end in range(len(string)):
         count[string[end]] = count.get(string[end], 0) + 1
         maxcount = max(maxcount, count[string[end]])
+        #max count stores the value count which is repeated more than any other character
+        #end - start has chars which are repeated and non repeated.
+        #ex AAABBACAAB here max count stores count values of A
         if end - start + 1 - maxcount > replaces:
             count[string[start]] -= 1
             start += 1
