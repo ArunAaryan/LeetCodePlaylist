@@ -37,6 +37,6 @@ class Builder():
                 q.append(root.right)
             
 
-b = Builder()
-root = b.ReturnTreeRoot([1,2,3,4,5,6,7,8,9,10])
-b.bfs(root)
+# b = Builder()
+# root = b.ReturnTreeRoot([1,2,3,4,5,6,7,8,9,10])
+# b.bfs(root)
