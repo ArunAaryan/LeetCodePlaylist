@@ -19,7 +19,7 @@
       "strings": false
     },
     "workbench.settings.useSplitJSON": true,
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
     "editor.lineNumbers": "relative"
   },
   "terminal.integrated.rendererType": "dom"
