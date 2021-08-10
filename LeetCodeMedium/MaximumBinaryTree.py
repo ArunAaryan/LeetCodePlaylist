@@ -22,7 +22,7 @@ class Solution:
             root.right = construct(nums, m + 1, r)
             return root
         return (construct(nums, 0, len(nums)))
-         
+        
     def constructMaximumBinaryTree(nums):
         stack = []
         for num in nums:
