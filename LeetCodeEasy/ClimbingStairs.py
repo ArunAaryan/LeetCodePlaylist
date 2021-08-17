@@ -1,24 +1,24 @@
 #Day 2
 
 
-def climbStairsNaive(i, n): # O2n solution
-    if i > n:
+def climbStairsNaive(step, n): # O2n solution
+    if step > n:
         return 0
-    if i == n:
+    if step == n:
         return 1
-    return climbStairsNaive(i+1,n) + climbStairsNaive(i+2, n)
+    return climbStairsNaive(step+1,n) + climbStairsNaive(step+2, n)
 #dynamic programming
 # With memoization parallel recursion depths are avoided and stack recomputation is avoided.
-def climbStairsMemo(i, n, memo):
-    if i > n:
+def climbStairsMemo(step, n, memo):
+    if step > n:
         return 0
-    if i == n:
+    if step == n:
         return 1
-    if memo[i] > 0:
-        return memo[i]
+    if memo[step] > 0:
+        return memo[step]
 
-    memo[i] = climbStairsMemo(i+1,n, memo) + climbStairsMemo(i+2, n, memo)
-    return memo[i]
+    memo[step] = climbStairsMemo(step+1,n, memo) + climbStairsMemo(step+2, n, memo)
+    return memo[step]
 
 # print(climbStairsMemo(0, 3,[0]*4))
 
@@ -35,8 +35,8 @@ def climbStairsdp(n):
     dp = [0] * (n+1)
     dp[1] = 1
     dp[2] = 2
-    for i in range(3, n+1):
-        dp[i] = dp[i-1] + dp[i-2]
+    for step in range(3, n+1):
+        dp[step] = dp[step-1] + dp[step-2]
     return dp[n]
 
 # print(climbStairsdp(4))
