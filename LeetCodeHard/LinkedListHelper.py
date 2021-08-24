@@ -22,6 +22,17 @@ class LinkedList:
             self.addNode(i)
         return self.head
 
+    @classmethod
+    def arrayToListC(cls, arr):
+        cur = head = Node(arr[0])
+        for idx in range(1, len(arr)):
+            cur.next = Node(arr[idx])
+            cur = head.next
+        return head
+
+
+
+
     def printList(self):
         cur = self.head 
         while cur:
