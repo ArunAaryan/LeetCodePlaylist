@@ -19,13 +19,13 @@
       "strings": false
     },
     "workbench.settings.useSplitJSON": true,
-    "editor.fontSize": 14,
     "editor.lineNumbers": "relative",
     "files.associations": {
       "vector": "cpp",
       "iosfwd": "cpp",
       "iterator": "cpp"
-    }
+    },
+    "editor.fontSize": 15
   },
   "terminal.integrated.rendererType": "dom"
 }
