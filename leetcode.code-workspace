@@ -25,7 +25,7 @@
       "iosfwd": "cpp",
       "iterator": "cpp"
     },
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "editor.defaultFormatter": "ms-python.python"
   },
   "terminal.integrated.rendererType": "dom"
