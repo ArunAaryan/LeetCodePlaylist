@@ -16,7 +16,8 @@ class Solution:
             res.append(templist.copy())
             i = start
             while i < len(nums):
-                # handle the first element for 'list index out of range' 0 -1
+                # handle the first element for 'list index out of range' 0 -1 and include element if path is
+                # starting from that position and exlude future occurences of it from same path.
                 if nums[i] == nums[i - 1] and i > start:
                     i += 1
                     continue
