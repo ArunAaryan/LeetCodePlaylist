@@ -17,7 +17,7 @@ class Solution:
             i = start
             while i < len(nums):
                 # handle the first element for 'list index out of range' 0 -1
-                if nums[i] == nums[i - 1] and i > 0:
+                if nums[i] == nums[i - 1] and i > start:
                     i += 1
                     continue
                 templist.append(nums[i])
