@@ -1,19 +1,26 @@
 class Solution:
     def findPeakElement(self, nums):
-        left = 0
-        right = len(nums) - 1
-        while left < right:
-            mid = (left + right) // 2
-            #check if mid is greater than mid + 1, if it greater then peak element must be in left, 
-            # in the worst case mid coudl be peak, or left element must definitely be lesser or 
-            # equal to peak as this is sorted aray.
-            if nums[mid]  > nums[mid + 1]:
-                right = mid 
-            #same applies here, mid+1 could be the peak element or the last element towards right could be peak
-            #right element could be equal or greater than middle.
-            else:
-                left = mid + 1
-        return mid
+        #corner cases
+        if len(nums) == 1:
+            return 0
+        n = len(nums) - 1
+        if nums[0] > nums[1]: # based on constraint nums[i] != nums[i + 1] and we can return any of the peek
+            return 0
+            # so if this is one of the peek we can consider it
+        if nums[n] > nums[n - 1]:
+            return n
+        start, end = 1, n - 1
+        
+        while start <= end: # = sign means handling mid inside the loop
+            mid = (start + end) // 2
+            if (nums[mid] > nums[mid - 1]) and (nums[mid] > nums[mid + 1]):
+                return  mid 
+            elif nums[mid] < nums[mid - 1]:
+                end = mid - 1
+            elif nums[mid] < nums[mid + 1]:
+                start = mid + 1
+
+    
     def findPeakElement1(self, nums):
         l, r = 0, len(nums)-1
         while l <= r:
