@@ -38,6 +38,18 @@ class Solution:
             return True
         if self.helper1(root.right):
             return True
+    #iterative solution 
+    def findKthSmallest(self, root, k):
+        stack = []
+        while root or stack:
+            while root:
+                stack.append(root) 
+                root = root.left
+            root = stack.pop()
+            k -= 1 
+            if k == 0: return root.val 
+            root = root.right
+
 root = Node(8)
 root.left = Node(3)
 root.right = Node(10)
