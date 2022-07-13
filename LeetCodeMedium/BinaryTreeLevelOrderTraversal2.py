@@ -15,7 +15,7 @@ class Solution:
         while current:
             next_level = []
             res.appendleft([])
-            for node in current:
+            for node in current: # this runs for all children at the current level
                 res[0].append(node)
                 if node.left:
                     next_level.append(node.left)
@@ -24,7 +24,24 @@ class Solution:
             current = next_level
         return(list(res))
 
-
+    def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
+        res, queue = [], deque([(root, 0)]) 
+        while queue:
+            node, level = queue.popleft() # keeping track of current level using level variable which is 0 by default during deque initialization
+            if node:
+                if level == len(res): # len(res) returns the current level, as we are adding level + 1 for all children at same level
+                    #some children have same level but only the first child will cause this condition, because we increase the length by appending [] to res
+                    res.append([])
+                res[level].append(node.val)
+                if node.left:
+                    queue.append((node.left, level + 1))
+                if node.right:
+                    queue.append((node.right, level + 1))
+        return res[::-1]
+                
+        
+        
+        
 s = Solution()
 res = s.levelOrderBottom()
 print(res)
