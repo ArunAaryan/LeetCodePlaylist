@@ -29,7 +29,21 @@ class Solution:
         while q not in ancestors:
             q = parent[q]
         return q
-            
+
+    def lowestCommonAncestorRecursive(self, root, p, q):
+        if not root:
+            return root
+        if root == p or root == q:
+            return root
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        if left and right:
+            return root
+        if left:
+            return left
+        else:
+            return right
+        
         
 root = TreeNode(3) 
 p = root.left = TreeNode(5)
