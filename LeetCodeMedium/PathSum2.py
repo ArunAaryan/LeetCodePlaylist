@@ -28,11 +28,32 @@ class Solution:
             if not root.left and not root.right and value == targetSum:
                res.append(currentList)
             if root.left:
-                queue.append((root.left, value + root.left.val, currentList + [root.left.val]))
+                currentList.append(root.left.val)
+                queue.append((root.left, value + root.left.val, currentList ))
             if root.right:
-                queue.append((root.right, value + root.right.val, currentList + [root.right.val]))
+                currentList.append(root.left.right)
+                queue.append((root.right, value + root.right.val, currentList))
         return res
-            
+    # implemented by me
+    def pathSumMyImplementation(self, root, targetSum):
+        if not root:
+            return []
+        q = deque([(root, targetSum - root.val, [] )])
+
+        res = []
+        while q:
+            currentNode, targetSum, currentPath = q.popleft()
+            if not currentNode.left and not currentNode.right and targetSum == 0:
+                currentPath.append(currentNode.val)
+                res.append(currentPath)
+                
+            if currentNode.left:
+                q.append((currentNode.left, targetSum - currentNode.left.val , currentPath + [currentNode.val]))
+            if currentNode.right:
+                # currentPath.append(currentNode.val)
+                q.append((currentNode.right, targetSum - currentNode.right.val, currentPath + [currentNode.val]))
+        return res
+        
 
 root = TreeNode(5)
 root.left = TreeNode(4)

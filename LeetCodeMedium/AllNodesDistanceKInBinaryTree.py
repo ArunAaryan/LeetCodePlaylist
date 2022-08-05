@@ -30,3 +30,30 @@ class Solution:
                     visited.add(neighbor)
                     q.append((neighbor, distance + 1))
         return [] 
+    def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
+        # convert to graph to reverse traverse
+        graph = defaultdict(list)
+        def dfs(node, parent):
+            if parent:
+                graph[node].append(parent)
+            if node.left:
+                graph[node].append(node.left)
+                dfs(node.left, node)
+            if node.right:
+                graph[node].append(node.right)
+                dfs(node.right, node)
+        dfs(root, None)
+        
+        ans = []
+        seen = {target}
+        def bfs(node, k):
+            if k == 0:
+                ans.append(node.val)
+            else:
+                seen.add(node)
+                for adj in graph[node]:
+                    if adj not in seen:
+                        bfs(adj, k - 1)
+        bfs(target, k)
+        return ans
+            
