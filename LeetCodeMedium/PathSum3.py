@@ -20,6 +20,8 @@ class Solution:
         
         curPathSum += root.val
         oldPathSum = curPathSum - target
+        #oldPathSum (Already occurred path sum)
+        # curPathSum(totalPathTillNow) - target will give us if the previous path sum which has occurred
         self.res += cache.get(oldPathSum, 0)
         cache[curPathSum] = cache.get(curPathSum, 0) + 1
 
