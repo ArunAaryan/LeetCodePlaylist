@@ -28,6 +28,7 @@ class Solution:
         self.dfs(root.left, target, curPathSum, cache)
         self.dfs(root.right, target, curPathSum, cache)
 
+        #if we move to different branch, we have to clear cache constructed my current branch.
         cache[curPathSum] -= 1
 
 

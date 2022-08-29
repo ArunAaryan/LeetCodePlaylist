@@ -36,5 +36,20 @@ class Solution:
         
         return stack[0]
         
-            
-        
+    def constructMaximumBinaryTree(self, nums):
+        stack = []  #stack will contain values that are greater than current num
+        for num in nums:
+            node = TreeNode(num)
+            # if stack clear all values until last stack value less than num
+            while stack and num > stack[-1].val:
+                node.left = stack.pop()
+                # if the last value of stack less than stack, means all of it's subtree
+                # belong to left side of the current num TreeNode
+            if stack:
+                stack[-1].right = node
+            # if stack has greater values than num means all of it's subtree values belong
+            # to right side of the greater element
+            stack.append(node)
+            # append the value after the greatest element 
+        return stack[0]
+        # return the greatest element which is on top of the stack.
