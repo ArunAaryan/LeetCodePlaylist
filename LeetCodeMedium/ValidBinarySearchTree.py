@@ -15,6 +15,21 @@ class Solution:
             return (dfs(root.left, left, root.val) and dfs(root.right, root.val, right)) 
         return dfs(root, float('-inf'), float('inf'))
         
+    # iterative solution based on inorder tree traversal
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        pre = None
+        stack = deque([])
+        while root or stack:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            if pre and root.val <= pre.val:
+                return False
+            pre = root
+            root = root.right
+        return True
+            
 root = TreeNode(2)
 root.left = TreeNode(1)
 root.right = TreeNode(3)
