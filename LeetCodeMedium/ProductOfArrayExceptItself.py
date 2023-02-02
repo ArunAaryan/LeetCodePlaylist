@@ -83,7 +83,9 @@ class Solution:
             p = p * nums[i]
         return output
     
-# s = Solution()
+s = Solution()
 # # print(s.([2,3,5,0]))
 # print(s.productExceptSelf([2,3,5,0]))
 # print(s.editorsSolution([2,3,5,0]))
+ans = s.productExceptSelfBest([1, 2,3,5,7])
+print(ans)

@@ -21,5 +21,24 @@ def maxSumSubArray2(arr):
         max_total = max(max_total, total)
     return max_total
 
+def maxSubArray(nums):
+    max_sum = -float('inf')
+    curr_sum = 0
+
+# using Kadane's Algorithm
+    for num in nums:
+        curr_sum += num
+        
+        # updating maximum sum
+        if curr_sum > max_sum:
+            max_sum = curr_sum
+            
+        # if anytime our curr_sum becomes less than 0, we remove the extra baggages.
+        # and sets the curr_sum = 0
+        if curr_sum < 0:
+            curr_sum = 0
+            
+    return max_sum
+
 
 print(maxSumSubArray2([-1001,60,7,-50,60]))
