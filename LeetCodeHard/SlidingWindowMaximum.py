@@ -5,11 +5,16 @@ class Solution:
         q = deque()
         res = []
         for pos, cur in enumerate(nums):
+            # remove all elements smaller than current one.
+            # now 'q' contains elements of current window in descending order
             while q and nums[q[-1]] <= cur:
                 q.pop()
             q.append(pos)
-            if q[0] == pos - k:
+            # if the highest element position is out of current window, remove it
+            if q[0] == pos - k: 
                 q.popleft()
+            # in a case where we don't have enough elements in the window the current window
+            # - append the highest element in the queue for every element we iterate. 
             if pos >=  k - 1:
                 res.append(nums[q[0]])
         return res

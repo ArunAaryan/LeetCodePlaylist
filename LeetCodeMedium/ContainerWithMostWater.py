@@ -12,6 +12,20 @@ class Solution:
             max_current = max(current, max_current)
         return max_current
 
+    def maxArea2(self, height):
+        left = 0
+        right = len(height) - 1
+        max_current = 0
+        while left < right:
+            if height[left] < height[right]:
+                current = height[left] * (right - left) 
+                left += 1
+            else:
+                current = height[right] * (right - left)
+                right -= 1
+            max_current = max(max_current, current)
+        return max_current
+
 s = Solution()
 # res = s.maxArea([1,8,6,2,5,4,8,3,7])
 res = s.maxArea([1,1])

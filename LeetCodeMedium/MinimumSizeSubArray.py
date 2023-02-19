@@ -12,6 +12,9 @@ class Solution:
                 left += 1
             right += 1
         return ml if ml != len(nums) + 1 else 0 
+        # if ml == len(nums):
+        #     return 0
+        # return ml
 s = Solution()
 res = s.minSubArrayLen(target = 7, nums = [2,3,1,2,4,3,7])
 print(res)
