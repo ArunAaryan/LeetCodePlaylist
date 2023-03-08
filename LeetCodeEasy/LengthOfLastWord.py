@@ -14,3 +14,4 @@ s = Solution()
 ans = s.lengthOfLastWord("luffy is still joyboy1")
 print(ans)
 
+
