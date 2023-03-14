@@ -2,7 +2,7 @@
 import collections
 def charReplace(string, replaces):
     count = {}
-    start = maxcount = res = 0
+    start = maxcount = 0
     for end in range(len(string)):
         count[string[end]] = count.get(string[end], 0) + 1
         maxcount = max(maxcount, count[string[end]])
@@ -12,8 +12,7 @@ def charReplace(string, replaces):
         if end - start + 1 - maxcount > replaces:
             count[string[start]] -= 1
             start += 1
-        res = max(res, end - start + 1)
-    return res
+    return end - start + 1
    
 res = charReplace('abas', 1)
 print(res)
