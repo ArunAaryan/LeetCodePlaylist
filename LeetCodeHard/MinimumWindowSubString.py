@@ -1,49 +1,55 @@
-# https://leetcode.com/problems/minimum-window-substring/solutions/26808/here-is-a-10-line-template-that-can-solve-most-substring-problems/?orderBy=most_votes
+from collections import Counter
+
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        ln_s = len(s)
-        ln_t = len(t)
-        if ln_s == 0 or ln_t == 0 or ln_t > ln_s:
+        # Get the length of the input strings
+        s_len = len(s)
+        t_len = len(t)
+
+        # Check if the input strings are valid
+        if s_len == 0 or t_len == 0 or t_len > s_len:
             return ""
-        dct = {}
-        for ch in t:
-            dct[ch] = dct.get(ch, 0) + 1
-        
-        i = j = 0
-        minWindow = ln_s + 1
+
+        # Create a dictionary to count the occurrences of each character in the target string
+        target_dict = Counter(t)
+
+        # Initialize the pointers, minimum window size and output string
+        left = right = 0
+        min_window = s_len + 1
         output = ""
-        
-        #ln_t will act as my counter.
-        while i < ln_s:
-            if s[i] in dct:
-                # count how many needed chars are decremented
-                if dct[s[i]] > 0:
-                    ln_t -= 1
-                    
-                # decrement from the dict even if it leads to negative
-                # so that I can take care of cases such as "AZBBCA" where I
-                # need to find "ABC"
-                dct[s[i]] -= 1
-            
-            # shrink the window size
-            # and get the result and make it non-valid window
-            # so that I can look forward
-            while ln_t == 0:
-                if i - j + 1 < minWindow:
-                    minWindow = i - j + 1
-                    output = s[j: i+1]
-                
-                if s[j] in dct:
-                    dct[s[j]] += 1
-                    
-                    # I added a char from shrinking window
-                    # which is needed for me to get "T"
-                    if dct[s[j]] > 0:
-                        ln_t += 1
-                    
-                j += 1
-                    
-            i += 1
-        
-        return "" if minWindow == ln_s + 1 else output
-        
+
+        # Initialize a counter to keep track of the remaining characters that need to be found
+        remaining_chars = t_len
+
+        # Move the right pointer to find all the characters of the target string
+        while right < s_len:
+            # If the current character is in the target string, decrement its count and update the remaining characters counter
+            if s[right] in target_dict:
+                if target_dict[s[right]] > 0:
+                    remaining_chars -= 1
+                target_dict[s[right]] -= 1
+
+            # If all the characters of the target string have been found, move the left pointer to shrink the window
+            while remaining_chars == 0:
+                # Update the minimum window size and output string
+                if right - left + 1 < min_window:
+                    min_window = right - left + 1
+                    output = s[left: right+1]
+
+                # If the current character is in the target string, increment its count and update the remaining characters counter
+                if s[left] in target_dict:
+                    target_dict[s[left]] += 1
+                    if target_dict[s[left]] > 0:
+                        remaining_chars += 1
+
+                # Move the left pointer to shrink the window
+                left += 1
+
+            # Move the right pointer to expand the window
+            right += 1
+
+        # Return the output string if a valid minimum window substring was found
+        return output if min_window != s_len + 1 else ""
+
+s = Solution()
+s.minWindow(s = "ADOBECODEBANC", t = "ABC")
