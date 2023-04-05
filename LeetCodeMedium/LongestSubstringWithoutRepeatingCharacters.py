@@ -17,6 +17,20 @@ class Solution:
 
             res = max(maximum, res) 
         return res
+    
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        seen = {}
+        windowStart = 0
+        maxg = 0
+        for idx, val in enumerate(s):
+            if val in seen and windowStart <= seen[val]:
+                windowStart = seen[val] + 1
+            else:
+                maxg = max(maxg, idx - windowStart + 1)
+            seen[val] = idx
+        return maxg
+                
+           
 
 s = Solution()
 res = s.lengthOfLongestSubstring("tm mzux t")
