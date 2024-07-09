@@ -5,7 +5,7 @@
     }
   },
   "python.pythonPath": "/Library/Developer/CommandLineTools/usr/bin/python3",
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.quickSuggestions": {
     "other": "off"
   },
